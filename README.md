@@ -65,14 +65,14 @@ python main.py
 
 
 
-## How It Works
+### How It Works
 
 
-# Data Preprocessing:
+## Data Preprocessing:
 
-Cleans Titanic dataset
-Encodes categorical variables
-Normalizes numerical features
+# Cleans Titanic dataset 
+# Encodes categorical variables 
+# Normalizes numerical features
 
 # Model Training & Optimization:
 
