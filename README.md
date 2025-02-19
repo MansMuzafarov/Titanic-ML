@@ -54,7 +54,7 @@ python main.py
 
 ## Project structure:
 
-├── Data                   # Contains train and test datasets 
+├── Data/ # Contains train and test datasets 
 ├── data_preprocessing.py  # Data cleaning & feature engineering  
 ├── features_designs.py    # Feature transformation functions  
 ├── model.py               # Logistic regression & classification functions  
