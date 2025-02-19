@@ -1,6 +1,5 @@
 # To ignore:
 __pycache__/
 *.png
-*.csv
 output.txt
 submission.csv
