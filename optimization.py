@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from data_preprocessing import normalize_data
 from model import logistic_func, classify, negative_log_likelihood, negative_log_likelihood_derivative
-from calculate_accuracy import calculate_errors
+from calculate_metrics import calculate_errors
 
 
 def batch_gradient_descent(
