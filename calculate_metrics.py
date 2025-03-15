@@ -11,6 +11,17 @@ def calculate_accuracy(y_true, y_pred):
    
     return np.mean(y_true == y_pred)
 
+def calculate_precision_and_recall(y_true, y_pred):
+    
+    TP = np.sum((y_true == 1) & (y_pred == 1))
+    FP = np.sum((y_true == 0) & (y_pred == 1))
+    FN = np.sum((y_true == 1) & (y_pred == 0))
+    
+    precision = TP/(TP + FP)
+    recall = TP/(TP + FN)
+    
+    return precision, recall
+
 
 def evaluate_model(df_train, df_test, features_design, theta_optimal, model):
     """
