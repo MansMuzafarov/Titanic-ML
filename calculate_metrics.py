@@ -47,5 +47,6 @@ def evaluate_model(df_train, df_test, features_design, theta_optimal, model):
 
     train_accuracy = calculate_accuracy(y_train, y_pred_train)
     test_accuracy = calculate_accuracy(y_test, y_pred_test)
-
-    return  train_accuracy, test_accuracy
+    precision, recall = calculate_precision_and_recall(y_test, y_pred_test)
+    
+    return  train_accuracy, test_accuracy, precision, recall

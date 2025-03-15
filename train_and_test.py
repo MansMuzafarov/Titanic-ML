@@ -4,7 +4,7 @@ from data_preprocessing import prepare_titanic_data, normalize_data, train_test_
 from features_designs import feature_affine_design
 from optimization import optimize_with_pipeline
 from model import logistic_func, classify
-from calculate_accuracy import evaluate_model, calculate_accuracy
+from calculate_metrics import evaluate_model, calculate_accuracy
 
 
 
@@ -85,7 +85,7 @@ def train_and_test():
         df_test[features_to_normalize] - means
     ) / sigmas
 
-    train_accuracy, test_accuracy = evaluate_model(
+    train_accuracy, test_accuracy, precision, recall = evaluate_model(
         df_train=df_train_normalized,
         df_test=df_test_normalized,
         features_design=feature_affine_design,
@@ -97,6 +97,8 @@ def train_and_test():
 
     print("Train accuracy: ", np.round(train_accuracy, 2))
     print("Test accuracy: ", np.round(test_accuracy, 2), "\n")
+    print("Precision: ", np.round(precision, 2), "\n")
+    print("Recall: ", np.round(recall, 2), "\n")
 
 
     
@@ -199,6 +201,7 @@ def make_predictions_for_kaggle():
     # Accuracy for train data:
     
     train_accuracy = calculate_accuracy(y_true = df_train["Survived"].to_numpy(), y_pred = y_pred_train)
+    
     
     print("Train accuracy: ", np.round(train_accuracy, 2))
     
